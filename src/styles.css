@@ -1,9 +1,86 @@
 .App {
   font-family: "Avenir Medium", Helvetica, Arial, sans-serif;
   text-align: center;
-  background-color: #e5e5e5;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .drop-down {
   max-width: 120px;
+  margin-left: 100px;
+}
+
+.container {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.row-container {
+  margin-top: 10px;
+  width: 100%;
+}
+
+b,
+strong,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Avenir Bold", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+h6 {
+  margin-bottom: -4px;
+  text-align: left;
+}
+
+.para {
+  text-align: left;
+  margin-bottom: -6px;
+  font-size: 15px;
+}
+
+.subpara {
+  float: left;
+  text-align: left;
+  color: #7a8287;
+  font-size: 15px;
+}
+
+.labels {
+  font-size: 15px;
+  float: left;
+  margin-bottom: 2px;
+}
+
+.pickupdetails {
+  margin-left: 30px;
+}
+
+span.group-time {
+  background-color: white;
+  color: #c8d0d4;
+  border-right-style: hidden;
+}
+
+.select-time {
+  border-left-style: hidden;
+  width: 50px;
+}
+
+.red {
+  margin: 3px;
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+.red-underline {
+  text-decoration: underline red;
+  color: red;
 }

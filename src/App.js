@@ -9,30 +9,25 @@ function App() {
 
   return (
     <div className="App">
-      <Row>
-        <Col>
-          <Input
-            type="select"
-            className="drop-down"
-            value={schedulingStrategy}
-            onChange={(e) => setSchedulingStrategy(e.target.value)}
-          >
-            <option value="fixed">Fixed</option>
-            <option value="semiFlexible">Semi flexible</option>
-            <option value="flexible">Flexible</option>
-          </Input>
-        </Col>
-        <Col>
-          <label>
-            <input
-              type="checkbox"
-              checked={canAddCargo}
-              onChange={(e) => setCanAddCargo(e.target.checked)}
-            />
-            {" Can add cargo "}
-          </label>
-        </Col>
-      </Row>
+      <Input
+        type="select"
+        className="drop-down"
+        value={schedulingStrategy}
+        onChange={(e) => setSchedulingStrategy(e.target.value)}
+      >
+        <option value="fixed">Fixed</option>
+        <option value="semiFlexible">Semi flexible</option>
+        <option value="flexible">Flexible</option>
+      </Input>
+
+      <label>
+        <input
+          type="checkbox"
+          checked={canAddCargo}
+          onChange={(e) => setCanAddCargo(e.target.checked)}
+        />
+        {" Can add cargo "}
+      </label>
       <Row>
         <Col>
           <RouteDetails

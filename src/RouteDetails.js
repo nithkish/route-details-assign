@@ -1,7 +1,25 @@
 import PropTypes from "prop-types";
+import RouteRows from "./RouteRows";
 
-function RouteDetails() {
-  return <>Hello world</>;
+function RouteDetails({ stops, schedulingStrategy, canAddCargo }) {
+  return (
+    <>
+      <h4 style={{ float: "left" }}>Route</h4>
+      <div className="container">
+        {stops.length > 0 &&
+          stops.map((stop, index) => {
+            return (
+              <RouteRows
+                stop={stop}
+                index={index}
+                schedulingStrategy={schedulingStrategy}
+                canAddCargo={canAddCargo}
+              />
+            );
+          })}
+      </div>
+    </>
+  );
 }
 
 RouteDetails.propTypes = {
