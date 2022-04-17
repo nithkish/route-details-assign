@@ -1,33 +1,47 @@
-import { Row, Col, Input } from "reactstrap";
+import { Row, Col, Input, Label } from "reactstrap";
+import FormGroupComponent from "./FormGroupComponent";
+
+const placeholder = {
+  dropdown: "Please select an option"
+};
+
 const CargoItemContainer = () => {
   return (
     <>
       <Row className="row-form">
         <Col sm={5}>
-          <Input type="select" />
+          <Label className="labels">Unloading Stop</Label>
+          <Input type="select" defaultValue="">
+            <option value="">{placeholder.dropdown}</option>
+          </Input>
         </Col>
         <Col sm={4}>
-          <Input type="select" />
+          <Label className="labels">Type</Label>
+          <Input type="select" defaultValue="">
+            <option value="">{placeholder.dropdown}</option>
+          </Input>
         </Col>
         <Col sm={3}>
+          <Label className="labels">PO Number</Label>
           <Input type="text" />
         </Col>
       </Row>
       <Row className="row-form">
         <Col sm={2}>
-          <Input type="select" />
+          <Label className="labels">Quantity</Label>
+          <Input type="text" />
         </Col>
         <Col sm={3}>
-          <Input type="select" />
+          <FormGroupComponent label={"Total Weight"} unit={"kg"} />
         </Col>
         <Col>
-          <Input type="text" />
+          <FormGroupComponent label={"Length"} unit={"cm"} />
         </Col>
         <Col>
-          <Input type="text" />
+          <FormGroupComponent label={"Width"} unit={"cm"} />
         </Col>
         <Col>
-          <Input type="text" />
+          <FormGroupComponent label={"Height"} unit={"cm"} />
         </Col>
       </Row>
     </>

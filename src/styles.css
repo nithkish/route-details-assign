@@ -71,9 +71,19 @@ span.group-time {
   border-right-style: hidden;
 }
 
+span.group-cargo {
+  background-color: white;
+  color: #c8d0d4;
+  border-left-style: hidden;
+}
+
 .select-time {
   border-left-style: hidden;
   width: 50px;
+}
+
+.cargo-text {
+  border-right-style: hidden;
 }
 
 .opening-hours {
