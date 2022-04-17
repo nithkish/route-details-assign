@@ -43,12 +43,21 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
                 <TimeSelector text={"To"} defaultValue={"12:00"} />
               </Col>
             </Row>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <span className="red">+</span>
-            <span className="red-underline">Gate reference</span>
+            <Row>
+              <Col>
+                <Row>
+                  <p className="subpara">Estimated Arrival</p>
+                </Row>
+                <Row>
+                  <span style={{ textAlign: "left" }}>-</span>
+                </Row>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <p className="red-underline">+Gate reference</p>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>

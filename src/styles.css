@@ -22,6 +22,7 @@
 .row-container {
   margin-top: 10px;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 b,
@@ -51,6 +52,7 @@ h6 {
   text-align: left;
   color: #7a8287;
   font-size: 15px;
+  margin-bottom: 0px;
 }
 
 .labels {
@@ -74,13 +76,16 @@ span.group-time {
   width: 50px;
 }
 
-.red {
-  margin: 3px;
-  color: red;
-  font-size: 15px;
-  font-weight: bold;
-}
 .red-underline {
+  text-align: left;
   text-decoration: underline red;
   color: red;
+  font-size: 15px;
+}
+
+.red-underline::first-letter {
+  margin-right: 3px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #fff;
 }
