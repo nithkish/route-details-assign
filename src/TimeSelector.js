@@ -20,7 +20,7 @@ const TimeSelector = ({ text, defaultValue }) => {
 
   return (
     <>
-      <div className="input-group mb-3">
+      <div className="input-group mb-3" style={{ marginTop: "25px" }}>
         <div className="input-group-prepend">
           <span className="group-time input-group-text">{text}</span>
         </div>

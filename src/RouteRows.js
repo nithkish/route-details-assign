@@ -2,6 +2,7 @@ import { Row, Col, Label } from "reactstrap";
 import { useState } from "react";
 import DatePicker from "reactstrap-date-picker";
 import TimeSelector from "./TimeSelector";
+import CargoItemContainer from "./CargoItemContainer";
 
 const convertedTime = (time) => {
   const timeString = time.toString();
@@ -11,6 +12,7 @@ const convertedTime = (time) => {
 
 function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
   const [pickUpDate, setPickUpDate] = useState(new Date().toISOString());
+  const [showCargo, setShowCargo] = useState(false);
 
   const from = convertedTime(stop.openingHours.from);
   const to = convertedTime(stop.openingHours.to);
@@ -23,7 +25,7 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
             <h6>{stop.address}</h6>
             <p className="para">{stop.company}</p>
             <span className="subpara">Opening Hours: </span>
-            <span>{from + " - " + to}</span>
+            <span className="opening-hours">{from + " - " + to}</span>
           </Col>
           <Col sm={6} className="pickupdetails">
             <Row>
@@ -58,6 +60,39 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
                 <p className="red-underline">+Gate reference</p>
               </Col>
             </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={2} style={{ width: "10%" }}>
+            <p
+              className={showCargo ? "cargo-title" : "red-underline"}
+              onClick={() => (showCargo ? "" : setShowCargo(!showCargo))}
+            >
+              {showCargo ? "Cargo Item" : "+Add Cargo"}
+            </p>
+          </Col>
+          <Col>
+            <hr className="line" />
+          </Col>
+        </Row>
+        <Row>
+          <CargoItemContainer />
+        </Row>
+        <Row className="row-form">
+          <Col sm={10}>
+            <hr className="line" style={{ maxWidth: "100%" }} />
+          </Col>
+          <Col>
+            <p
+              className="cargo-title"
+              style={{ cursor: "pointer", float: "right" }}
+              onClick={() => setShowCargo(!showCargo)}
+            >
+              Cancel
+            </p>
+          </Col>
+          <Col>
+            <p className="save">Save</p>
           </Col>
         </Row>
       </div>

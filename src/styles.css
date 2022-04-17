@@ -62,7 +62,7 @@ h6 {
 }
 
 .pickupdetails {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 span.group-time {
@@ -76,11 +76,23 @@ span.group-time {
   width: 50px;
 }
 
+.opening-hours {
+  float: left;
+  margin-left: 10px;
+  color: rgb(27, 25, 25);
+}
+
+.line {
+  max-width: 85%;
+}
+
 .red-underline {
   text-align: left;
   text-decoration: underline red;
   color: red;
   font-size: 15px;
+  cursor: pointer;
+  margin-top: 4px;
 }
 
 .red-underline::first-letter {
@@ -88,4 +100,26 @@ span.group-time {
   font-weight: bold;
   text-decoration: underline;
   text-decoration-color: #fff;
+}
+
+.cargo-title {
+  font-size: 15px;
+  color: rgb(126, 119, 119);
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.row-form {
+  margin-top: 20px;
+  max-width: 89%;
+}
+
+.save {
+  text-decoration: underline red;
+  color: red;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 4px;
+  font-weight: bolder;
+  float: right;
 }
