@@ -1,5 +1,5 @@
 import { Row, Col, Label } from "reactstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "reactstrap-date-picker";
 import TimeSelector from "./TimeSelector";
 import CargoItemContainer from "./CargoItemContainer";
@@ -13,9 +13,17 @@ const convertedTime = (time) => {
 function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
   const [pickUpDate, setPickUpDate] = useState(new Date().toISOString());
   const [showCargo, setShowCargo] = useState(false);
+  const [showDateTime, setShowDateTime] = useState(true);
+  const [showTime, setShowTime] = useState(true);
 
   const from = convertedTime(stop.openingHours.from);
   const to = convertedTime(stop.openingHours.to);
+
+  useEffect(() => {}, [index, schedulingStrategy]);
+
+  useEffect(() => {
+    if (!canAddCargo) setShowCargo(false);
+  }, [canAddCargo]);
 
   return (
     <>
@@ -30,7 +38,9 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
           <Col sm={6} className="pickupdetails">
             <Row>
               <Col sm={4}>
-                <Label className="labels"> Pick up date</Label>
+                <Label className="labels">
+                  {index > 0 ? "Arrival date" : "Pick up date"}
+                </Label>
                 <DatePicker
                   value={pickUpDate}
                   onChange={(date) => setPickUpDate(date)}
@@ -38,14 +48,14 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
                   dateFormat="DD/MM/YYYY"
                 />
               </Col>
-              <Col>
+              <Col hidden={!showTime}>
                 <TimeSelector text={"From"} defaultValue={"08:00"} />
               </Col>
-              <Col>
+              <Col hidden={!showTime}>
                 <TimeSelector text={"To"} defaultValue={"12:00"} />
               </Col>
             </Row>
-            <Row>
+            <Row hidden={showDateTime}>
               <Col>
                 <Row>
                   <p className="subpara">Estimated Arrival</p>
@@ -57,43 +67,49 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
             </Row>
             <Row>
               <Col>
-                <p className="red-underline">+Gate reference</p>
+                <p className="red-underline" style={{ marginTop: "20px" }}>
+                  +Gate reference
+                </p>
               </Col>
             </Row>
           </Col>
         </Row>
-        <Row>
-          <Col sm={2} style={{ width: "10%" }}>
-            <p
-              className={showCargo ? "cargo-title" : "red-underline"}
-              onClick={() => (showCargo ? "" : setShowCargo(!showCargo))}
-            >
-              {showCargo ? "Cargo Item" : "+Add Cargo"}
-            </p>
-          </Col>
-          <Col>
-            <hr className="line" />
-          </Col>
-        </Row>
-        <Row>
-          <CargoItemContainer />
-        </Row>
-        <Row className="row-form">
-          <Col sm={10}>
-            <hr className="line" style={{ maxWidth: "100%" }} />
-          </Col>
-          <Col>
-            <p
-              className="cargo-title"
-              style={{ cursor: "pointer", float: "right" }}
-              onClick={() => setShowCargo(!showCargo)}
-            >
-              Cancel
-            </p>
-          </Col>
-          <Col>
-            <p className="save">Save</p>
-          </Col>
+        <Row hidden={!canAddCargo}>
+          <Row>
+            <Col sm={2} style={{ width: "10%" }}>
+              <p
+                className={showCargo ? "cargo-title" : "red-underline"}
+                onClick={() => (showCargo ? "" : setShowCargo(!showCargo))}
+              >
+                {showCargo ? "Cargo Item" : "+Add Cargo"}
+              </p>
+            </Col>
+            <Col>
+              <hr className="line" />
+            </Col>
+          </Row>
+          <Row hidden={!showCargo}>
+            <Row>
+              <CargoItemContainer />
+            </Row>
+            <Row className="row-form">
+              <Col sm={10}>
+                <hr className="line" style={{ maxWidth: "100%" }} />
+              </Col>
+              <Col>
+                <p
+                  className="cargo-title"
+                  style={{ cursor: "pointer", float: "right" }}
+                  onClick={() => setShowCargo(!showCargo)}
+                >
+                  Cancel
+                </p>
+              </Col>
+              <Col>
+                <p className="save">Save</p>
+              </Col>
+            </Row>
+          </Row>
         </Row>
       </div>
     </>
