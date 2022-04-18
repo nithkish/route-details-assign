@@ -1,5 +1,4 @@
 .App {
-  font-family: "Avenir Medium", Helvetica, Arial, sans-serif;
   text-align: center;
   margin-left: 50px;
   margin-right: 50px;
@@ -32,7 +31,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Avenir Bold", Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -53,12 +51,14 @@ h6 {
   color: #7a8287;
   font-size: 15px;
   margin-bottom: 0px;
+  margin-top: 1px;
 }
 
 .labels {
   font-size: 15px;
   float: left;
   margin-bottom: 2px;
+  color: rgb(16 0 0);
 }
 
 .pickupdetails {
@@ -89,7 +89,7 @@ span.group-cargo {
 .opening-hours {
   float: left;
   margin-left: 10px;
-  color: rgb(27, 25, 25);
+  color: rgb(16 0 0);
 }
 
 .line {
@@ -98,38 +98,61 @@ span.group-cargo {
 
 .red-underline {
   text-align: left;
-  text-decoration: underline red;
-  color: red;
-  font-size: 15px;
+  text-decoration: underline #e63b09;
+  color: #e63b09;
+  font-size: 14px;
   cursor: pointer;
-  margin-top: 4px;
 }
 
 .red-underline::first-letter {
   margin-right: 3px;
-  font-weight: bold;
+  font-size: 120%;
+  font-weight: bolder;
   text-decoration: underline;
   text-decoration-color: #fff;
 }
 
 .cargo-title {
   font-size: 15px;
-  color: rgb(126, 119, 119);
-  font-weight: bold;
+  color: rgb(116, 110, 110);
+  font-weight: 500;
   margin-top: 4px;
 }
 
 .row-form {
   margin-top: 20px;
   max-width: 89%;
+  transition: opacity 1s ease;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
 }
 
 .save {
-  text-decoration: underline red;
-  color: red;
+  text-decoration: underline #e63b09;
+  color: #e63b09;
   font-size: 15px;
   cursor: pointer;
   margin-top: 4px;
-  font-weight: bolder;
+  font-weight: 500;
   float: right;
+}
+
+.select-option {
+  font-size: 85%;
+}
+
+.icon {
+  color: #b8bbbd;
+  margin-top: 10px;
+}
+
+.icon-class {
+  margin-top: 10px;
+  margin-left: 40px;
 }

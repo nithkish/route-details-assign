@@ -15,15 +15,44 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
   const [showCargo, setShowCargo] = useState(false);
   const [showDateTime, setShowDateTime] = useState(true);
   const [showTime, setShowTime] = useState(true);
+  const [className, setClassName] = useState("red-underline");
+  const [cargoText, setCargoText] = useState("+Add Cargo");
 
   const from = convertedTime(stop.openingHours.from);
   const to = convertedTime(stop.openingHours.to);
 
-  useEffect(() => {}, [index, schedulingStrategy]);
+  /*useEffect Hook check conditions and display components based on 
+  the scheduling strategy and index of the stop*/
+  useEffect(() => {
+    if (schedulingStrategy === "fixed") {
+      setShowTime(false);
+      index > 0 ? setShowDateTime(false) : setShowDateTime(true);
+    } else if (schedulingStrategy === "semiFlexible") {
+      setShowTime(true);
+      index > 0 ? setShowDateTime(false) : setShowDateTime(true);
+    } else {
+      setShowTime(true);
+      setShowDateTime(true);
+    }
+  }, [index, schedulingStrategy]);
 
   useEffect(() => {
     if (!canAddCargo) setShowCargo(false);
   }, [canAddCargo]);
+
+  //useEffect hook for Transition of Cargo Item Header
+  useEffect(() => {
+    if (showCargo) {
+      setTimeout(() => {
+        setClassName("cargo-title");
+        setCargoText("Cargo Item");
+      }, 200);
+    } else
+      setTimeout(() => {
+        setClassName("red-underline");
+        setCargoText("+Add Cargo");
+      }, 400);
+  }, [showCargo]);
 
   return (
     <>
@@ -36,7 +65,7 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
             <span className="opening-hours">{from + " - " + to}</span>
           </Col>
           <Col sm={6} className="pickupdetails">
-            <Row>
+            <Row hidden={!showDateTime}>
               <Col sm={4}>
                 <Label className="labels">
                   {index > 0 ? "Arrival date" : "Pick up date"}
@@ -48,11 +77,15 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
                   dateFormat="DD/MM/YYYY"
                 />
               </Col>
-              <Col hidden={!showTime}>
-                <TimeSelector text={"From"} defaultValue={"08:00"} />
+              <Col>
+                {showTime && (
+                  <TimeSelector text={"From"} defaultValue={"08:00"} />
+                )}
               </Col>
-              <Col hidden={!showTime}>
-                <TimeSelector text={"To"} defaultValue={"12:00"} />
+              <Col>
+                {showTime && (
+                  <TimeSelector text={"To"} defaultValue={"12:00"} />
+                )}
               </Col>
             </Row>
             <Row hidden={showDateTime}>
@@ -76,23 +109,23 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
         </Row>
         <Row hidden={!canAddCargo}>
           <Row>
-            <Col sm={2} style={{ width: "10%" }}>
+            <Col sm={2} style={{ width: "11%" }}>
               <p
-                className={showCargo ? "cargo-title" : "red-underline"}
+                className={className}
                 onClick={() => (showCargo ? "" : setShowCargo(!showCargo))}
               >
-                {showCargo ? "Cargo Item" : "+Add Cargo"}
+                {cargoText}
               </p>
             </Col>
             <Col>
               <hr className="line" />
             </Col>
           </Row>
-          <Row hidden={!showCargo}>
-            <Row>
-              <CargoItemContainer />
+          <Row>
+            <Row style={{ marginLeft: "12px" }}>
+              <CargoItemContainer showCargo={showCargo} />
             </Row>
-            <Row className="row-form">
+            <Row className="row-form" hidden={!showCargo}>
               <Col sm={10}>
                 <hr className="line" style={{ maxWidth: "100%" }} />
               </Col>

@@ -1,23 +1,33 @@
 import PropTypes from "prop-types";
 import RouteRows from "./RouteRows";
+import IconGenerator from "./IconGenerator";
+import { Row, Col } from "reactstrap";
 
 function RouteDetails({ stops, schedulingStrategy, canAddCargo }) {
   return (
     <>
       <h4 style={{ float: "left" }}>Route</h4>
-      <div className="container">
+      <br />
+      <Row>
         {stops.length > 0 &&
           stops.map((stop, index) => {
             return (
-              <RouteRows
-                stop={stop}
-                index={index}
-                schedulingStrategy={schedulingStrategy}
-                canAddCargo={canAddCargo}
-              />
+              <Row>
+                <Col sm={1}>
+                  <IconGenerator index={index} length={stops.length} />
+                </Col>
+                <Col>
+                  <RouteRows
+                    stop={stop}
+                    index={index}
+                    schedulingStrategy={schedulingStrategy}
+                    canAddCargo={canAddCargo}
+                  />
+                </Col>
+              </Row>
             );
           })}
-      </div>
+      </Row>
     </>
   );
 }
