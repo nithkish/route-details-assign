@@ -19,10 +19,13 @@ Due to lack of time few things are not covered in this POC. They are listed belo
 
 ##Assumptions
 
-1.default date populated is todays date for pick up date.
-2.default time selected to be 10:00 -12:00 for the pick up time.
-3.for fixed and semi-flexible scheduling strategy the estimated arrival is undefined hence hardcoded not to display anything.
-4.Gate reference button and save button are unresponsive as the implementation is out of scope.
+1. default date populated is todays date for pick up date.
+
+2. default time selected to be 10:00 -12:00 for the pick up time.
+
+3. for fixed and semi-flexible scheduling strategy the estimated arrival is undefined hence hardcoded not to display anything.
+
+4. Gate reference button and save button are unresponsive as the implementation is out of scope.
 
 ##Project Structure
 
