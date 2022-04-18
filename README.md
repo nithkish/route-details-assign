@@ -18,7 +18,7 @@ Due to some personal reasons i had limited time to complete this POC,so few thin
 
 4. Made use of inline css for components that were already present.
 
-5. Responsiveness of the page.
+5. Mobile responsiveness of the page.
 
 ##Assumptions
 
