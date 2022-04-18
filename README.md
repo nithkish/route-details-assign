@@ -8,7 +8,7 @@ mobile: +917709532932
 
 ##Coverage
 
-Due to lack of time few things are not covered in this POC. They are listed below.
+Due to some personal reasons i had limited time to complete this POC,so few things/areas are not covered in this project. They are listed below.
 
 1. Transition of elements has been only implemented in cargo item form page while adding the cargo item and cancelling it. All other transition are default react transitions.
 
