@@ -10,12 +10,13 @@ mobile: +917709532932
 
 Due to lack of time few things are not covered in this POC. They are listed below.
 
-1.Transition of elements have been only implemented in cargo item form page while adding the cargo item. all other transition is the default react ones.
+1. Transition of elements has been only implemented in cargo item form page while adding the cargo item and cancelling it. All other transition are default react transitions.
 
 2. Unit test cases using Jest librrary.
-3. Started off with css, didnt switch back to sass as i am new to writing sass and will take some time(there were few areas where SASS functionalities could have been used).
 
-4.Made use of inline css for components that were already present.
+3. Started writing with css, couldnt switch back to sass as i am new to writing sass and will take some time(there were few areas where SASS functionalities could have been used).
+
+4. Made use of inline css for components that were already present.
 
 5. Responsiveness of the page.
 
@@ -33,10 +34,12 @@ Due to lack of time few things are not covered in this POC. They are listed belo
 
 All the components are categorized into two folders.
 
-1.components - components containing the main content and logic of the page.
-2.utilComponents - components which can be reused in other components following the same patterns.
+1. components - components containing the main content and logic of the page.
+
+2. utilComponents - components which can be reused in other components following the same patterns.
 
 ##Main Libraries Used
 
-1.reactstrap - a subset of bootstrap, primarily used because of the ease of usage.
-2.fontawesome- for free icons
+1. reactstrap - a subset of bootstrap, primarily used because of the ease of usage.
+
+2. fontawesome- for free icons
