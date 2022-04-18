@@ -1,5 +1,5 @@
 import { Row, Col, Input, Label } from "reactstrap";
-import FormGroupComponent from "./FormGroupComponent";
+import FormGroupComponent from "../utilComponents/FormGroupComponent";
 import { useState, useEffect } from "react";
 
 const placeholder = {

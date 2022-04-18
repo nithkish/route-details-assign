@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarker, faFlag } from "@fortawesome/free-solid-svg-icons";
+import "./index.css";
+
 const IconGenerator = ({ index, length }) => {
   return (
     <>
@@ -8,7 +10,7 @@ const IconGenerator = ({ index, length }) => {
         {index !== length - 1 ? (
           <span
             class="fa-layers-text fa-inverse"
-            style={{ fontSize: "40%", fontWeight: "700" }}
+            style={{ fontSize: "40%", fontWeight: "700", height: "25px" }}
           >
             {index + 1}
           </span>

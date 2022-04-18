@@ -1,5 +1,6 @@
 import { Input } from "reactstrap";
 import { useState } from "react";
+import "./index.css";
 
 /* function to generate the array of times in 24Hr format */
 const getTimeArray = () => {

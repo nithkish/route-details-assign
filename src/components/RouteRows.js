@@ -1,7 +1,7 @@
 import { Row, Col, Label } from "reactstrap";
 import { useEffect, useState } from "react";
 import DatePicker from "reactstrap-date-picker";
-import TimeSelector from "./TimeSelector";
+import TimeSelector from "../utilComponents/TimeSelector";
 import CargoItemContainer from "./CargoItemContainer";
 
 const convertedTime = (time) => {
@@ -79,7 +79,7 @@ function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
               </Col>
               <Col>
                 {showTime && (
-                  <TimeSelector text={"From"} defaultValue={"08:00"} />
+                  <TimeSelector text={"From"} defaultValue={"10:00"} />
                 )}
               </Col>
               <Col>

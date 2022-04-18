@@ -1,0 +1,44 @@
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e63b09;
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.header {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+span.group-time {
+  background-color: white;
+  color: #c8d0d4;
+  border-right-style: hidden;
+  padding-right: 0px;
+}
+
+.icon {
+  color: #9fa4aa;
+  margin-top: 10px;
+}
+
+.icon-class {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.select-time {
+  border-left-style: hidden;
+  width: 55px;
+}

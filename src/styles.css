@@ -1,12 +1,11 @@
 .App {
   text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 100px;
+  margin-right: 80px;
 }
 
-.drop-down {
-  max-width: 120px;
-  margin-left: 100px;
+.main-div {
+  margin-top: 20px;
 }
 
 .container {
@@ -65,21 +64,10 @@ h6 {
   margin-left: 40px;
 }
 
-span.group-time {
-  background-color: white;
-  color: #c8d0d4;
-  border-right-style: hidden;
-}
-
 span.group-cargo {
   background-color: white;
   color: #c8d0d4;
   border-left-style: hidden;
-}
-
-.select-time {
-  border-left-style: hidden;
-  width: 50px;
 }
 
 .cargo-text {
@@ -145,14 +133,4 @@ span.group-cargo {
 
 .select-option {
   font-size: 85%;
-}
-
-.icon {
-  color: #9fa4aa;
-  margin-top: 10px;
-}
-
-.icon-class {
-  margin-top: 10px;
-  margin-left: 40px;
 }
