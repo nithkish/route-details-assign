@@ -14,8 +14,10 @@ Due to lack of time few things are not covered in this POC. They are listed belo
 
 2. Unit test cases using Jest librrary.
 3. Started off with css, didnt switch back to sass as i am new to writing sass and will take some time(there were few areas where SASS functionalities could have been used).
-   4.Made use of inline css for components that were already present.
-4. Responsiveness of the page.
+
+4.Made use of inline css for components that were already present.
+
+5. Responsiveness of the page.
 
 ##Assumptions
 
