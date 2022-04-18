@@ -3,6 +3,9 @@ import RouteRows from "./RouteRows";
 import IconGenerator from "../utilComponents/IconGenerator";
 import { Row, Col } from "reactstrap";
 
+/* Main component which is combined with multiple child component to 
+create the actual Route Details Page*/
+
 function RouteDetails({ stops, schedulingStrategy, canAddCargo }) {
   return (
     <>

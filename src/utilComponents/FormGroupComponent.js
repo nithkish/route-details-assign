@@ -1,5 +1,7 @@
 import { Label, Input } from "reactstrap";
 
+/* Component to be used for text boxes with appended input group
+the Component takes the text label and the unit for adding the input group*/
 const FormGroupComponent = ({ label, unit }) => {
   return (
     <>

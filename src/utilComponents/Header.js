@@ -2,6 +2,8 @@ import React from "react";
 import "./index.css";
 import { Row } from "reactstrap";
 
+/* Header component to display Logo*/
+
 const Header = () => (
   <div className="header">
     <Row>

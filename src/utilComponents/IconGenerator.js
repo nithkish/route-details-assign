@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarker, faFlag } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
 
+/* Generates List of icons with overlap of index or end flag
+to be used in a iterative method which takes current index and total length of the object  */
+
 const IconGenerator = ({ index, length }) => {
   return (
     <>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Row, Col } from "reactstrap";
-
+/* Footer component to display contact details*/
 const Footer = () => (
   <div className="footer">
     <Row>

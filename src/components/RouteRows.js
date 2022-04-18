@@ -4,11 +4,15 @@ import DatePicker from "reactstrap-date-picker";
 import TimeSelector from "../utilComponents/TimeSelector";
 import CargoItemContainer from "./CargoItemContainer";
 
+/* fucntion to convert time in the JSON file to disply format
+(0900 -> 09:00)*/
 const convertedTime = (time) => {
   const timeString = time.toString();
   const convertedTime = timeString.slice(0, -2) + ":" + timeString.slice(-2);
   return convertedTime;
 };
+
+/* Contains all the main logic for the Route Details Component*/
 
 function RouteRows({ stop, index, schedulingStrategy, canAddCargo }) {
   const [pickUpDate, setPickUpDate] = useState(new Date().toISOString());

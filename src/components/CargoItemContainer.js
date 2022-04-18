@@ -6,6 +6,9 @@ const placeholder = {
   dropdown: "Please select an option"
 };
 
+/* Component displaying the content of the form for adding cargo*/
+/* TODO - add variables and setters mapped with each element*/
+
 const CargoItemContainer = ({ showCargo }) => {
   const [render, setRender] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
