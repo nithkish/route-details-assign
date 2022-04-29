@@ -3,8 +3,6 @@
   padding: 1rem;
   background-color: #e63b09;
   position: static;
-  bottom: 0;
-  left: 0;
   width: 100%;
   color: white;
   font-weight: 500;
@@ -16,8 +14,6 @@
   padding: 1rem;
   background-color: white;
   position: static;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 

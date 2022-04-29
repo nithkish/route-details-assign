@@ -12,7 +12,7 @@ const IconGenerator = ({ index, length }) => {
         <FontAwesomeIcon icon={faMapMarker} className="icon" />
         {index !== length - 1 ? (
           <span
-            class="fa-layers-text fa-inverse"
+            className="fa-layers-text fa-inverse"
             style={{ fontSize: "40%", fontWeight: "700", height: "25px" }}
           >
             {index + 1}
